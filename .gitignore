@@ -33,3 +33,9 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# RVM env
+.ruby-gemset
