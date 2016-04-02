@@ -15,6 +15,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'mongoid', '~> 5.1', '>= 5.1.2'
 gem 'mongoid_fulltext'
 
+# MD parser
+gem 'redcarpet', '~> 3.3'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
