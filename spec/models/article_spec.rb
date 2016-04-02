@@ -14,5 +14,13 @@ RSpec.describe Article, type: :model do
       expect(article.update(author: 'Bowser')).to be_falsy
       expect(article.errors.keys).to include(:author)
     end
+
+    it 'can search in its text' do
+      number = 25
+      FactoryGirl.create_list(:article, number)
+      other = create(:article, :other_text)
+      expect(Article.fulltext_search('Hello!', max_results: 100).size).to eq(25)
+      expect(Article.fulltext_search(other.text[1..5]).size).to eq(1)
+    end
   end
 end

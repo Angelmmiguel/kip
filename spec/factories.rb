@@ -3,6 +3,10 @@ FactoryGirl.define do
   factory :article do
     title 'This is a title'
     author 'Yoshi'
-    text '# hello!'
+    text '# Hello!'
+
+    trait :other_text do
+      text 'Other text'
+    end
   end
 end
