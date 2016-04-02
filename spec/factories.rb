@@ -4,6 +4,7 @@ FactoryGirl.define do
     title 'This is a title'
     author 'Yoshi'
     text '# Hello!'
+    category 'My Category'
 
     trait :other_text do
       text 'Other text'

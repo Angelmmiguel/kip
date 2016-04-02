@@ -12,18 +12,19 @@ class Article
   field :author
   field :draft, type: Boolean, default: false
   field :collaborators, type: Array, default: []
+  field :category, type: String
 
   # Versions
   # embeds_many :versions, class_name: "ArticleVersion"
 
-  # Category
-  # has_one :category
+  # Indexes
+  index({ category: 1 }, unique: true, name: 'category_index')
 
   # Search
   fulltext_search_in :text
 
   # Validations
-  validates :title, :text, :author, presence: true
+  validates :title, :text, :author, :category, presence: true
   validate :author_not_changed
 
   private

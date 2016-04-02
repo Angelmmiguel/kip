@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   context 'An Article' do
-    it 'must have a title, author and text' do
+    it 'must have a title, author, category and text' do
       expect(build(:article, title: nil).save).to be_falsy
       expect(build(:article, author: nil).save).to be_falsy
       expect(build(:article, text: nil).save).to be_falsy
+      expect(build(:article, category: nil).save).to be_falsy
       expect(build(:article).save).to be_truthy
     end
 
