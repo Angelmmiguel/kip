@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Mongoid
 gem 'mongoid', '~> 5.1', '>= 5.1.2'
+gem 'mongoid_fulltext'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec', '~> 3.4'
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'mongoid-rspec', '3.0.0'
 end
 
