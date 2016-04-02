@@ -4,5 +4,9 @@ rvm:
   - 2.2.2
 gemfile:
   - Gemfile
+services:
+  - mongodb
 install: bundle install
+before_script:
+  - sleep 5
 script: bundle exec rspec
