@@ -1,5 +1,15 @@
 @import "base/globals";
 
+/* General
+ * -------------------- */
+
+input, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+
 section.search-box {
   background-color: $dark-background-color;
   margin: 10px auto;
@@ -16,10 +26,6 @@ section.search-box {
       border: none;
       border-bottom: 2px solid $light;
       font-size: 2.2em;
-
-      &:focus {
-        outline: none;
-      }
     }
 
     .count {

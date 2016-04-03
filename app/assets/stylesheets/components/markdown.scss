@@ -1,0 +1,88 @@
+@import "base/globals";
+
+// Markdown style
+.markdown {
+  color: darken($secondary, 20%);
+
+  p {
+    margin: 5px 0 10px;
+    font-size: 1.4em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: $primary;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.7em;
+  }
+
+  h3 {
+    font-size: 2.4em;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+
+  h5 {
+    font-size: 1.7em;
+  }
+
+  h6 {
+    font-size: 1.3em;
+  }
+
+  // Lists
+  ul {
+    padding-left: 45px;
+    font-size: 1.4em;
+  }
+
+  // Code
+  pre {
+    font-size: 1.1em;
+
+    code.hljs {
+      padding: 12px;
+    }
+  }
+
+  // Tables
+  table {
+    border: 1px solid $md-table-border;
+    border-spacing: 0;
+    border-collapse: separate;
+
+    th, td {
+      padding: 7px 15px;
+      border-left: 1px solid $md-table-border;
+    }
+
+    th {
+      border-bottom: 1px solid $md-table-border;
+    }
+
+    td {
+      border-bottom: 1px solid lighten($md-table-border, 7%);
+    }
+
+    tr th:first-child,
+    tr td:first-child {
+      border-left: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: lighten($md-table-border, 8%);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}

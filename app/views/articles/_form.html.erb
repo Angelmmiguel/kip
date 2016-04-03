@@ -1,0 +1,64 @@
+<%= form_tag @article, class: 'articles-form', method: save_method(@article) do %>
+  <section class="article article-editor">
+    <header>
+      <%= text_field_tag :title, @article.title, class: 'article-title',
+            placeholder: 'Insert the title' %>
+      <p class="article-credits">
+        <% if @article.persisted? %>
+          By <%= @article.author %>
+        <% else %>
+          By <%= text_field_tag :author, @article.author, class: 'article-author',
+                placeholder: 'Your name' %>
+        <% end %>
+        in <%= text_field_tag :category, @article.category, class: 'article-category',
+              placeholder: 'A category' %>
+      </p>
+    </header>
+    <article>
+      <%= text_area_tag :text, @article.text, class: 'article-text',
+            placeholder: 'Your marvelous article' %>
+    </article>
+  </section>
+
+  <footer class="article-bar">
+    <%= hidden_field_tag :number_of_words, @article.number_of_words, class: 'article-number' %>
+    <span class="word-count">
+      <%= material_icon.subject.css_class('small') %>
+      <span class="word-count-value"><%= @article.number_of_words %></span> words
+    </span>
+    <span class="read-time">
+      <%= material_icon.timer.css_class('small') %>
+      <span class="read-time-value"><%= @article.read_time %></span> min
+    </span>
+    <span class="save">
+      <%= save_button(@article) %>
+    </span>
+  </footer>
+
+<% end %>
+
+<script>
+// Autosize
+autosize($('.article-editor textarea'));
+
+$('.article-editor').on('keyup', '.article-text', function (){
+  // Count number of words
+  var words = this.value.match(/\S+/g).length,
+      count = this.value.length,
+      time = Math.ceil(words / <%= Article::WORDS_PER_MINUTE %>),
+      last_element = this.value[count - 1];
+  $('.word-count-value').text(words);
+  $('.article-number').val(words);
+  $('.read-time-value').text(time);
+
+  if (this.selectionEnd === count) {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+});
+
+$(document).on('click', '.article-save', function(e){
+  e.preventDefault();
+  $('.articles-form').submit();
+});
+
+</script>

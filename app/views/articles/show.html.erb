@@ -1,0 +1,20 @@
+<% content_for :navigation_menu do %>
+  <ul class="horizontal">
+    <li class="read-time">
+      <%= material_icon.timer.css_class('small') %> <%= @article.read_time %> min
+    </li>
+    <li class="link"><%= link_to material_icon.border_color, edit_article_path(@article) %></li>
+  </ul>
+<% end %>
+
+<section class="article article-show">
+  <header>
+    <h1 class="article-title"><%= @article.title %></h1>
+    <p class="article-credits">
+      By <span><%= @article.author %></span> in <span><%= @article.category %></span>
+    </p>
+  </header>
+  <article class="article-text markdown">
+    <%= @text %>
+  </article>
+</section>

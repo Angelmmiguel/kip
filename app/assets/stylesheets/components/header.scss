@@ -1,6 +1,6 @@
 @import "base/globals";
 
-header {
+header.main {
   background-color: white;
   height: 60px;
   padding: 10px 0;
@@ -32,10 +32,12 @@ header {
       border-radius: 50%;
       @include ease-transition(.3s);
 
-      &:hover {
-        background-color: $primary;
-        a {
-          color: white;
+      &.link {
+        &:hover {
+          background-color: $primary;
+          a {
+            color: white;
+          }
         }
       }
     }

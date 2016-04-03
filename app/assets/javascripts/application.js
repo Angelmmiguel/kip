@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require autosize.min
+//= require highlight.pack
 //= require_tree .
+
+// Highligh Code
+ready = function(){
+  hljs.initHighlighting.called = false;
+  hljs.initHighlighting();
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+$(document).on('page:restore', ready);

@@ -20,3 +20,119 @@
     }
   }
 }
+
+.article {
+  max-width: 720px;
+  margin: 10px auto;
+
+  header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #D3E3FF;
+    padding-bottom: 20px;
+  }
+
+  .article-title,
+  .article-text {
+    width: 100%;
+    background-color: white;
+    border: none;
+  }
+
+  .article-title {
+    font-size: 4em;
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+}
+
+.article-show {
+  .article-credits {
+    margin: 0;
+    font-size: 1.8em;
+    color: $secondary;
+
+    span {
+      display: inline-block;
+      margin: 0 10px;
+      color: darken($secondary, 20%);
+    }
+  }
+
+  .article-text {
+    margin-bottom: 80px;
+  }
+}
+
+.article-editor {
+
+  input {
+    font-family: $font-main;
+  }
+
+  .article-credits {
+    margin: 0;
+    font-size: 1.8em;
+    color: $secondary;
+
+    .article-author,
+    .article-category {
+      width: 210px;
+      display: inline-block;
+      margin: 0 10px;
+      background-color: white;
+      font-size: 1em;
+      border: none;
+    }
+  }
+
+  article {
+    .article-text {
+      font-size: 1.6em;
+      padding-bottom: 90px;
+      resize: none;
+      line-height: 1.5em;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+  }
+}
+
+// Read time is showed on show/navigation too
+.read-time,
+.word-count {
+  color: lighten($secondary, 20%);
+}
+
+footer.article-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: $dark-background-color;
+
+  span {
+    display: inline-block;
+  }
+
+  .read-time {
+    margin-left: 10px;
+  }
+
+  .save {
+    margin-left: 25px;
+
+    a {
+      padding: 4px 10px;
+      border: 1px solid $light;
+      border-radius: 10px;
+      @include ease-transition(.3s);
+
+      &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+      }
+    }
+  }
+}

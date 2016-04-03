@@ -39,6 +39,16 @@ ul {
   text-align: right;
 }
 
+i.mi, i.material-icons {
+  &.small {
+    display: inline;
+    line-height: 0;
+    font-size: 20px;
+    position:relative;
+    top: 4px;
+  }
+}
+
 /* Clearfix
  * ------------------ */
 
