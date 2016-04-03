@@ -18,6 +18,9 @@ gem 'mongoid_fulltext'
 # MD parser
 gem 'redcarpet', '~> 3.3'
 
+# Icons
+gem 'material_icons'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -44,6 +47,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'mongoid-rspec', '3.0.0'
+  gem 'quiet_assets'
+  gem 'pretty_routes'
 end
 
 group :development do

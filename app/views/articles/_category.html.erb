@@ -1,0 +1,10 @@
+<article class="category">
+  <h2><%= category %></h2>
+  <ul>
+    <% articles.each do |article| %>
+      <li>
+        <h3><%= link_to article.title, article_path(article) %></h3>
+      </li>
+    <% end %>
+  </ul>
+</article>

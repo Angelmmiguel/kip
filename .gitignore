@@ -37,5 +37,9 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
+# Graphics
+*.sketch
+*.psd
+
 # RVM env
 .ruby-gemset

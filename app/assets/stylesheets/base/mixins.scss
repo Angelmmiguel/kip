@@ -1,0 +1,68 @@
+/* Mixins file
+ * ------------------ */
+
+/*
+ *  Create a transition to the selected elements
+ */
+@mixin transition($elements, $time, $type){
+  -webkit-transition: $elements $time $type;
+  -moz-transition: $elements $time $type;
+  -ms-transition: $elements $time $type;
+  -o-transition: $elements $time $type;
+  transition: $elements $time $type;
+}
+
+/*
+ *  Multiple alias to simplify the transition function
+ */
+@mixin ease-transition($time){
+  @include transition(all, $time, ease);
+}
+
+@mixin simple-transition(){
+  @include transition(all, .5s, ease);
+}
+
+/* End of aliases */
+
+/*
+ *  Prefix a transform to adapt it to browsers
+ */
+@mixin transform($transform){
+  -o-transform: $transform;
+  -ms-transform: $transform; /* IE 9 */
+  -moz-transform: $transform;
+  -webkit-transform: $transform; /* Chrome, Safari, Opera */
+  transform: $transform;
+}
+
+/*
+ *  Prefix a animation to adapt it to browsers
+ */
+@mixin animation($name, $time, $mode){
+  -webkit-animation: $name $time $mode;
+  -moz-animation: $name $time $mode;
+  animation: $name $time $mode;
+}
+
+/*
+ *  Display a container as flex
+ */
+@mixin display-flex(){
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+/*
+ *  Display a container as flex and centered
+ */
+@mixin display-flex-center() {
+  @include display-flex();
+  -webkit-justify-content: center;
+  justify-content: center;
+}

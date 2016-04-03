@@ -1,0 +1,139 @@
+@import "base/globals";
+
+/* Base reset
+ * ------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+  font-family: $font-main;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: $primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: $margin-m;
+  margin-bottom: $margin-s;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Position
+ * ------------------ */
+.text-center,
+.centered {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Clearfix
+ * ------------------ */
+
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* Displays
+ * ------------------ */
+
+.hidden {
+  display: none;
+}
+
+.hide-on-mobile {
+  display: initial;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+.hide-on-tablet {
+  display: initial;
+}
+
+.show-on-tablet {
+  display: none;
+}
+
+// Set views in mobile
+@media screen and (max-width: $break-mobile) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .show-on-mobile {
+    display: initial;
+  }
+}
+
+// Set views in mobile
+@media screen and (max-width: $break-tablet) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+
+  .show-on-tablet {
+    display: initial;
+  }
+}
+
+/* Margins
+ * ------------------ */
+
+.margin-l {
+  margin: $margin-l 0;
+}
+
+.margin-m {
+  margin: $margin-m 0;
+}
+
+.margin-s {
+  margin: $margin-s 0;
+}
+
+.margin-tl {
+  margin-top: $margin-l;
+}
+
+.margin-tm {
+  margin-top: $margin-m;
+}
+
+.margin-ts {
+  margin-top: $margin-s;
+}
+
+.margin-bl {
+  margin-bottom: $margin-l;
+}
+
+.margin-bm {
+  margin-bottom: $margin-m;
+}
+
+.margin-bs {
+  margin-bottom: $margin-s;
+}

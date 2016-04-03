@@ -1,0 +1,16 @@
+<section class="search-box">
+  <div class="wrap">
+    <article class="search">
+      <%= text_field_tag 'search', '', class: 'main-search', placeholder: 'Search' %>
+      <p class="count">Search over <%= @count %> articles</p>
+    </article>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="article-list">
+    <% @articles.each do |category, articles| %>
+      <%= render partial: 'category', locals: { category: category, articles: articles} %>
+    <% end %>
+  </section>
+</div>
