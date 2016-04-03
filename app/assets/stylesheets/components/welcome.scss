@@ -1,0 +1,30 @@
+@import "base/globals";
+
+section.welcome {
+  padding: 0 20px;
+  max-width: 460px;
+  margin: 40px auto;
+  text-align: center;
+  @include animation(welcome 1.5s forwards);
+
+  h1 {
+    color: $primary;
+    font-size: 4em;
+
+    span {
+      font-family: $font-logo;
+    }
+  }
+
+  p {
+    color: $secondary;
+    font-size: 1.3em;
+    margin-bottom: 45px;
+    line-height: 1.6em;
+  }
+
+  a.btn {
+    font-size: 1.3em;
+    padding: 7px 15px;
+  }
+}

@@ -18,6 +18,6 @@ module ArticlesHelper
   def save_button(article)
     text = article.persisted? ? 'Update' : 'Save'
     link_to "#{text} #{material_icon.save.css_class('small')}".html_safe, '',
-            class: 'article-save'
+            class: 'btn btn-light article-save'
   end
 end

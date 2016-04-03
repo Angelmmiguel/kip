@@ -39,10 +39,10 @@
 /*
  *  Prefix a animation to adapt it to browsers
  */
-@mixin animation($name, $time, $mode){
-  -webkit-animation: $name $time $mode;
-  -moz-animation: $name $time $mode;
-  animation: $name $time $mode;
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  animation: $animation;
 }
 
 /*

@@ -4,19 +4,31 @@
   </ul>
 <% end %>
 
-<section class="search-box">
-  <div class="wrap">
-    <article class="search">
-      <%= text_field_tag 'search', '', class: 'main-search', placeholder: 'Search' %>
-      <p class="count">Search over <%= @count %> articles</p>
-    </article>
-  </div>
-</section>
-
-<div class="wrap">
-  <section class="article-list">
-    <% @articles.each do |category, articles| %>
-      <%= render partial: 'category', locals: { category: category, articles: articles} %>
-    <% end %>
+<% if @count == 0 %>
+  <section class="welcome">
+    <h1>Welcome to <span>Kip</span></h1>
+    <p>
+      Kip is an open source Knowledge base, because <strong>knowledge is Power</strong>.
+      Don't let words pass you by, <strong>start to write your awesome first article</strong>.
+    </p>
+    <%= link_to "Write your first article #{material_icon.mode_edit.css_class('small')}".html_safe,
+            new_article_path, class: 'btn btn-blue' %>
   </section>
-</div>
+<% else %>
+  <section class="search-box">
+    <div class="wrap">
+      <article class="search">
+        <%= text_field_tag 'search', '', class: 'main-search', placeholder: 'Search' %>
+        <p class="count">Search over <%= @count %> articles</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="article-list">
+      <% @articles.each do |category, articles| %>
+        <%= render partial: 'category', locals: { category: category, articles: articles} %>
+      <% end %>
+    </section>
+  </div>
+<% end %>

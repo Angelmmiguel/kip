@@ -9,6 +9,8 @@ input, textarea {
   }
 }
 
+/* Search box
+ * -------------------- */
 
 section.search-box {
   background-color: $dark-background-color;
@@ -36,5 +38,35 @@ section.search-box {
       font-weight: 300;
       font-style: italic;
     }
+  }
+}
+
+/* Buttons
+ * -------------------- */
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.btn-light {
+  border: 1px solid $light;
+  @include ease-transition(.3s);
+
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+  }
+}
+
+.btn-blue {
+  color: white;
+  background-color: $primary;
+  @include ease-transition(.3s);
+
+  &:hover {
+    background-color: darken($primary, 8%);
+    color: white;
   }
 }

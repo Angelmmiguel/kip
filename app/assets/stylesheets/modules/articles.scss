@@ -121,18 +121,5 @@ footer.article-bar {
 
   .save {
     margin-left: 25px;
-
-    a {
-      padding: 4px 10px;
-      border: 1px solid $light;
-      border-radius: 10px;
-      @include ease-transition(.3s);
-
-      &:hover {
-        background-color: $primary;
-        border-color: $primary;
-        color: white;
-      }
-    }
   }
 }
