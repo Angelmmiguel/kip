@@ -17,6 +17,8 @@ Bundler.require(*Rails.groups)
 
 module Kip
   class Application < Rails::Application # :nodoc:
+    # Include Lib folder
+    config.autoload_paths << Rails.root.join('lib')
     # Load mongoid
     Mongoid.load!(Rails.root.join('config/mongoid.yml'))
   end

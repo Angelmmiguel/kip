@@ -8,15 +8,15 @@
           By <%= @article.author %>
         <% else %>
           By <%= text_field_tag :author, @article.author, class: 'article-author',
-                placeholder: 'Your name' %>
+                placeholder: 'your name' %>
         <% end %>
         in <%= text_field_tag :category, @article.category, class: 'article-category',
-              placeholder: 'A category' %>
+              placeholder: 'a category' %>
       </p>
     </header>
     <article>
       <%= text_area_tag :text, @article.text, class: 'article-text',
-            placeholder: 'Your marvelous article' %>
+            placeholder: "Write here your #{AwesomeWords.sample} article" %>
     </article>
   </section>
 
