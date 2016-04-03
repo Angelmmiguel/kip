@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
       Redcarpet::Markdown.new(
         Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true,
                                  tables: true)
-    @text = markdown.render(@article.text).gsub!("\n\n", '<br/>').html_safe
+    @text = markdown.render(@article.text).gsub("\n\n", '<br/>').html_safe
   end
 
   # Edit an article
