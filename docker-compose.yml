@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mongo:
+    image: mongo:3.2.4
+    volumes:
+      - /data/db
+    ports:
+      - "27017:27017"
+    command: --smallfiles
+  kip:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      SECRET_KEY_BASE: 4c0120869a7400dd555376d29cab1509e9951d5beba2a837f05e53f27188017e8d711b94e3fefe71abf077293f712098261dad69e40b5c0ece07aad536fbf73c
+      RAILS_ENV: production
+      MONGODB_IP: mongo
+      RAILS_SERVE_STATIC_FILES: 'true'
+    ports:
+      - "3001:3000"
+    depends_on:
+      - mongo
