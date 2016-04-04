@@ -29,7 +29,13 @@ To run Kip with [docker](https://docker.com/) follow it's [installation guide](h
 # Clone the project
 git clone https://github.com/Angelmmiguel/kip.git
 cd kip
-# Create secrets file
+# Create secrets file. You can skip this command if you create config/secrets.env
+# with the following format:
+#
+# # Content of config/secrets.env
+# SECRET_KEY_BASE=$string
+# # Where $string is an alphanumeric lowercase random string with 128 characters.
+#
 echo "SECRET_KEY_BASE=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-z0-9' | fold -w 128 | head -n 1)" >> config/secrets.env
 # Run with docker compose
 docker-compose up
@@ -38,6 +44,22 @@ docker-compose up
 Go to `http://localhost:3000` and start to write your articles :).
 
 If you stop the services with `docker-compose stop` you can start them after with `docker-compose start` and restore all articles.
+
+# Screenshots
+
+## Welcome
+
+![welcome](https://cloud.githubusercontent.com/assets/4056725/14265458/d351830e-fac1-11e5-9c44-9e9cb08aa0aa.png)
+
+## Write an article
+![writing](https://cloud.githubusercontent.com/assets/4056725/14265459/d35353d2-fac1-11e5-8568-a7c233b23302.png)
+
+## Show an article
+![show](https://cloud.githubusercontent.com/assets/4056725/14265457/d350ab0a-fac1-11e5-899d-0a0c17b20cbf.png)
+
+## Index
+![index](https://cloud.githubusercontent.com/assets/4056725/14265456/d349a602-fac1-11e5-99d1-821249870e5b.png)
+
 
 # Contributing
 
