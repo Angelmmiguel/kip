@@ -41,6 +41,9 @@
 // Autosize
 autosize($('.article-editor textarea'));
 
+// Focus on title
+$(".article-title").focus();
+
 $('.article-editor').on('keyup', '.article-text', function (){
   // Count number of words
   var words = this.value.match(/\S+/g).length,
