@@ -29,6 +29,8 @@ To run Kip with [docker](https://docker.com/) follow it's [installation guide](h
 # Clone the project
 git clone https://github.com/Angelmmiguel/kip.git
 cd kip
+# Create secrets file
+echo "SECRET_KEY_BASE=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-z0-9' | fold -w 128 | head -n 1)" >> config/secrets.env
 # Run with docker compose
 docker-compose up
 ```
