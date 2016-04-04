@@ -13,7 +13,7 @@ services:
     environment:
       RAILS_ENV: production
       MONGODB_IP: mongo
-      RAILS_SERVE_STATIC_FILES: yes
+      RAILS_SERVE_STATIC_FILES: 'yes'
     env_file:
       - ./config/secrets.env
     ports:
