@@ -17,6 +17,6 @@ services:
     env_file:
       - ./config/secrets.env
     ports:
-      - "3001:3000"
+      - "3000:3000"
     depends_on:
       - mongo
