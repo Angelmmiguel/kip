@@ -41,8 +41,13 @@
 // Autosize
 autosize($('.article-editor textarea'));
 
-// Focus on title
-$(".article-title").focus();
+// Focus on title if article is new.
+// Otherwise, put the cursor at the end of the text.
+<% if @article.persisted? %>
+  $(".article-text").putCursorAtEnd();
+<% else %>
+  $(".article-title").focus();
+<% end %>
 
 $('.article-editor').on('keyup', '.article-text', function (){
   // Count number of words
