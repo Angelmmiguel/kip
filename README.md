@@ -23,7 +23,7 @@ Kip is an open source Knowledge base for **teams**, because **knowledge is Power
 
 ## Docker compose
 
-To run Kip with [docker](https://docker.com/) follow it's [installation guide](https://docs.docker.com/engine/installation/) to get `docker-engine` and `docker-compose`. After docker engine and compose are installed, run next commands in a terminal:
+To run Kip with [docker](https://docker.com/) follow it's [installation guide](https://docs.docker.com/engine/installation/) to get `docker-engine` and `docker-compose`. After install docker tools, run next commands in a terminal:
 
 ```bash
 # Clone the project
