@@ -6,6 +6,7 @@ $dark-background-color:   #F6F6F6;
 $primary:                 #4C88ED;
 $secondary:               #676767;
 $light:                   #D3E3FF;
+$gray:                    #DDDDDD;
 
 // markdown
-$md-table-border:         #ddd;
+$md-table-border:         $gray;

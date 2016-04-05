@@ -12,6 +12,23 @@
   h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     color: $primary;
+    position: relative;
+
+    a {
+      position: absolute;
+      left: -40px;
+      opacity: 0;
+      padding: 0 10px;
+      @include ease-transition(.3s);
+
+      i {
+        font-size: 24px
+      }
+    }
+
+    &:hover a {
+      opacity: 1;
+    }
   }
 
   h1 {
@@ -51,6 +68,19 @@
     code.hljs {
       padding: 12px;
     }
+  }
+
+  p code {
+    font-size: .8em;
+    padding: 2px 6px;
+    display: inline-block;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    background-color: lighten($gray, 10%);
+  }
+
+  img {
+    max-width: 100%;
   }
 
   // Tables

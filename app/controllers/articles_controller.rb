@@ -24,8 +24,7 @@ class ArticlesController < ApplicationController
   def show
     markdown =
       Redcarpet::Markdown.new(
-        Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true,
-                                 tables: true)
+        Render::Kip, autolink: true, fenced_code_blocks: true, tables: true)
     @text = markdown.render(@article.text).gsub("\n\n", '<br/>').html_safe
   end
 
