@@ -44,7 +44,7 @@ autosize($('.article-editor textarea'));
 // Focus on title if article is new.
 // Otherwise, put the cursor at the end of the text.
 <% if @article.persisted? %>
-  $(".article-text").putCursorAtEnd();
+  $(".article-text").focus();
 <% else %>
   $(".article-title").focus();
 <% end %>
