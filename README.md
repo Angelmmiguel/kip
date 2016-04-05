@@ -51,15 +51,7 @@ If you stop the services with `docker-compose stop` you can start them after wit
 
 ![welcome](https://cloud.githubusercontent.com/assets/4056725/14265458/d351830e-fac1-11e5-9c44-9e9cb08aa0aa.png)
 
-## Write an article
-![writing](https://cloud.githubusercontent.com/assets/4056725/14265459/d35353d2-fac1-11e5-8568-a7c233b23302.png)
-
-## Show an article
-![show](https://cloud.githubusercontent.com/assets/4056725/14265457/d350ab0a-fac1-11e5-899d-0a0c17b20cbf.png)
-
-## Index
-![index](https://cloud.githubusercontent.com/assets/4056725/14265456/d349a602-fac1-11e5-99d1-821249870e5b.png)
-
+More screenshots in the [Wiki](https://github.com/Angelmmiguel/kip/wiki/Screenshots)
 
 # Contributing
 
