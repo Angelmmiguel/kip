@@ -20,9 +20,9 @@ RSpec.describe Article, type: :model do
       number = 25
       FactoryGirl.create_list(:article, number)
       other = create(:article, :other_text)
-      expect(Article.fulltext_search('Hello!', max_results: 100).size)
+      expect(Article.search('Hello!', limit: 100).size)
         .to eq(number)
-      expect(Article.fulltext_search(other.text[1..5]).size).to eq(1)
+      expect(Article.search(other.text[1..5]).size).to eq(1)
     end
   end
 end

@@ -8,5 +8,6 @@ services:
   - mongodb
 install: bundle install
 before_script:
+  - RAILS_ENV=test rake db:mongoid:create_indexes
   - sleep 5
 script: bundle exec rspec
