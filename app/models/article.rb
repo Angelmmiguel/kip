@@ -4,7 +4,6 @@
 class Article
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::FullTextSearch
 
   # Average read Time
   WORDS_PER_MINUTE = 310
@@ -22,14 +21,41 @@ class Article
   # embeds_many :versions, class_name: "ArticleVersion"
 
   # Indexes
-  index({ category: 1 }, unique: true, name: 'category_index')
-
-  # Search
-  fulltext_search_in :text
+  index({ category: 1 }, unique: false, name: 'category_index')
+  index({ author: 1 }, unique: false, name: 'author_index')
+  index({ title: 'text', category: 'text', text: 'text', author: 'text' },
+        weights: { category: 10, author: 9, title: 8, text: 5 },
+        name: 'TextIndex')
 
   # Validations
   validates :title, :text, :author, :category, presence: true
   validate :author_not_changed
+
+  # Search a string in Articles
+  #
+  # @param query [String] String to search
+  # @param to_model [boolean] Convert results to model
+  # @return [Array of Hash, Array of Article] Results sort by ratings
+  #
+  def self.search(query, to_model: false, limit: 25, read_time: false)
+    res =
+      Article.collection
+             .find('$text' => { '$search' => query })
+             .projection(id: 1, title: 1, category: 1, author: 1,
+                         number_of_words: 1, score: { '$meta' => 'textScore' })
+             .sort(score: { '$meta' => 'textScore' })
+             .limit(limit)
+             .entries
+    if !to_model && read_time
+      # Return with read_time
+      res.map! do |r|
+        r.merge!(read_time: (r[:number_of_words].to_f / WORDS_PER_MINUTE).ceil)
+      end
+    else
+      # Return result
+      to_model ? res.map! { |r| new(r) } : res
+    end
+  end
 
   # Get and approximation of read time per article
   #

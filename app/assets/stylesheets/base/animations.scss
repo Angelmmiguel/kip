@@ -31,3 +31,35 @@
   from { opacity: 0; }
   to   { opacity: 1; @include transform(translateY(20px)); }
 }
+
+/* Fade in
+ * ------------------ */
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; @include transform(translateY(-20px)); }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; @include transform(translateY(-20px)); }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; @include transform(translateY(-20px)); }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; @include transform(translateY(-20px)); }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; @include transform(translateY(-20px)); }
+}

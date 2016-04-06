@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   # Render editor
   #
   def new
-    @article = Article.new
+    @article = Article.new(title: params[:title])
   end
 
   # Show an article
