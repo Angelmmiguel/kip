@@ -13,7 +13,7 @@ Kip is an open source Knowledge base for **teams**, because **knowledge is Power
 * It's **focused on writing**. Start to write in one click.
 * You **don't need to register**
 * **Markdown powered**
-* **Powerful search in articles** (*In progress*)
+* **Powerful search in articles**
 * Highlight code snippets
 * `docker-compose` ready
 * Categories and authors are created on demand
