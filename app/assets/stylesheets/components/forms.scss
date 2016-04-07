@@ -3,10 +3,29 @@
 /* General
  * -------------------- */
 
-input, textarea {
+input,
+textarea {
   &:focus {
     outline: none;
   }
+
+  &.error {
+    box-sizing: border-box;
+  }
+}
+
+input {
+  &.error {
+    border-bottom: 2px solid #E86B6B !important;
+  }
+  border: 2px solid transparent;
+}
+
+textarea {
+  &.error {
+    border-bottom: 2px solid #E86B6B !important;
+  }
+  border: 2px solid transparent;
 }
 
 /* Search box

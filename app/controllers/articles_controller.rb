@@ -47,9 +47,13 @@ class ArticlesController < ApplicationController
   #
   def create
     @article = Article.create(new_article_params)
-    # Expire index
-    expire_action(action: :index)
-    redirect_to @article
+    if @article.valid?
+      # Expire index
+      expire_action(action: :index)
+      redirect_to @article
+    else
+      render :new
+    end
   end
 
   private
