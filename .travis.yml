@@ -8,7 +8,7 @@ services:
   - mongodb
 install: bundle install
 before_script:
-  - mongo --eval "db.adminCommand({ setParameter: true, textSearchEnabled : true})"
+  - ./init_mongo.sh
   - RAILS_ENV=test rake db:mongoid:create_indexes
   - sleep 5
 script: bundle exec rspec

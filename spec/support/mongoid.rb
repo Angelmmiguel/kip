@@ -5,6 +5,7 @@ RSpec.configure do |config|
 
   # Clean before suite
   config.before :each do
-    Mongoid.purge!
+    # Mongoid.purge! # This line delete indexes too!
+    Article.destroy_all
   end
 end
