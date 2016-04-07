@@ -173,6 +173,23 @@ footer.article-bar {
     display: inline-block;
   }
 
+  .markdown-help {
+    margin-right: 25px;
+
+    &.new a {
+      color: lighten($primary, 5%);
+    }
+
+    a {
+      color: lighten($secondary, 20%);
+      @include ease-transition(.3s);
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
   .read-time {
     margin-left: 10px;
   }

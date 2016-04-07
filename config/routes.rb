@@ -8,4 +8,9 @@ Rails.application.routes.draw do
     resources :search, only: [:index]
   end
   resources :articles
+
+  # Help routes
+  namespace :help do
+    resources :markdown, only: [:index]
+  end
 end

@@ -16,12 +16,15 @@
     </header>
     <article>
       <%= text_area_tag :text, @article.text, class: "article-text #{error?(@article, :text)}",
-            placeholder: "Write here your **#{AwesomeWords.sample}** article.\nPowered by *markdown*",
+            placeholder: "Write here your **#{AwesomeWords.sample}** article.",
             data: { validate: 'presence' } %>
     </article>
   </section>
 
   <footer class="article-bar">
+    <span class="markdown-help hide-on-mobile <%= 'new' if @article.new_record? %>">
+      <%= link_to 'Markdown help', help_markdown_index_path, target: '_blank' %>
+    </span>
     <%= hidden_field_tag :number_of_words, @article.number_of_words, class: 'article-number' %>
     <span class="word-count">
       <%= material_icon.subject.css_class('small') %>
