@@ -22,7 +22,7 @@ RSpec.describe Article, type: :model do
       other = create(:article, :other_text)
       expect(Article.search('Hello!', limit: 100).size)
         .to eq(number)
-      expect(Article.search(other.text[1..5]).size).to eq(1)
+      expect(Article.search(other.text).size).to eq(1)
     end
   end
 end
