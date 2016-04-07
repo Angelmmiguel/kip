@@ -20,6 +20,9 @@ gem 'redcarpet', '~> 3.3'
 # Icons
 gem 'material_icons'
 
+# Cache
+gem 'actionpack-action_caching'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

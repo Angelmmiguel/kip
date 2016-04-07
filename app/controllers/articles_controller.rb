@@ -4,13 +4,13 @@
 class ArticlesController < ApplicationController
   # Set the current article
   before_action :set_article, only: [:edit, :show, :update]
+  caches_action :index
 
   # List all available articles grouped by category.
   #
   def index
     @articles = Article.all.only(:category, :title).asc(:category).asc(:title)
                        .group_by(&:category)
-    @count = Article.count
   end
 
   # Render editor
@@ -35,7 +35,11 @@ class ArticlesController < ApplicationController
   # Update an article
   #
   def update
-    @article.update(update_article_params)
+    @article.assign_attributes(update_article_params)
+    # Expire index if its needed
+    expire_action(action: :index) if @article.title_changed? ||
+                                     @article.category_changed?
+    @article.save
     redirect_to @article
   end
 
@@ -43,6 +47,8 @@ class ArticlesController < ApplicationController
   #
   def create
     @article = Article.create(new_article_params)
+    # Expire index
+    expire_action(action: :index)
     redirect_to @article
   end
 

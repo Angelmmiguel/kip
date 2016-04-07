@@ -7,14 +7,16 @@
   </ul>
 <% end %>
 
-<section class="article article-show">
-  <header>
-    <h1 class="article-title"><%= @article.title %></h1>
-    <p class="article-credits">
-      By <span><%= @article.author %></span> in <span><%= @article.category %></span>
-    </p>
-  </header>
-  <article class="article-text markdown">
-    <%= @text %>
-  </article>
-</section>
+<% cache (@article) do %>
+  <section class="article article-show">
+    <header>
+      <h1 class="article-title"><%= @article.title %></h1>
+      <p class="article-credits">
+        By <span><%= @article.author %></span> in <span><%= @article.category %></span>
+      </p>
+    </header>
+    <article class="article-text markdown">
+      <%= @text %>
+    </article>
+  </section>
+<% end %>
