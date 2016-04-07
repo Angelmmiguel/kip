@@ -1,0 +1,27 @@
+# Use the correct version of Ruby
+machine:
+  ruby:
+    version: 2.3.0
+  services:
+    - mongodb
+
+dependencies:
+  cache_directories:
+    - ../mongodb-linux-x86_64-ubuntu1204-3.2.4
+  pre:
+    - if [[ ! -d ../mongodb-linux-x86_64-ubuntu1204-3.2.4 ]]; then wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1204-3.2.4.tgz -P ../ && tar xvzf ../mongodb-linux-x86_64-ubuntu1204-3.2.4.tgz -C ../; fi
+    - sudo stop mongodb
+    - sudo cp ../mongodb-linux-x86_64-ubuntu1204-3.2.4/bin/* /usr/bin
+    - sudo start mongodb
+    - sleep 5
+    - ./init_mongo.sh
+    - RAILS_ENV=test rake db:mongoid:create_indexes
+
+test:
+  override:
+    - bundle exec rspec -f d
+  # post:
+  #   - bundle exec rubocop -f s --fail-level E app config lib
+  #   - bundle exec flay app lib
+  #   - find {app,lib,config} -name \*.rb | xargs bundle exec flog
+  #   - bundle exec brakeman -q
