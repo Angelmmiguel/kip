@@ -13,7 +13,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Mongoid
 gem 'mongoid', '~> 5.1', '>= 5.1.2'
-gem 'mongoid_fulltext'
 
 # MD parser
 gem 'redcarpet', '~> 3.3'

@@ -86,17 +86,10 @@ GEM
       mongo (~> 2.1)
       origin (~> 2.2)
       tzinfo (>= 0.3.37)
-    mongoid-compatibility (0.3.1)
-      activesupport
-      mongoid (>= 2.0)
     mongoid-rspec (3.0.0)
       mongoid (~> 5.0)
       rake
       rspec (~> 3.3)
-    mongoid_fulltext (0.7.1)
-      mongoid (>= 3.0)
-      mongoid-compatibility
-      unicode_utils
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -193,7 +186,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
-    unicode_utils (1.4.0)
     zeroclipboard-rails (0.1.1)
       railties (>= 3.1)
 
@@ -208,7 +200,6 @@ DEPENDENCIES
   material_icons
   mongoid (~> 5.1, >= 5.1.2)
   mongoid-rspec (= 3.0.0)
-  mongoid_fulltext
   pretty_routes
   pry
   pry-nav

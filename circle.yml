@@ -18,7 +18,7 @@ dependencies:
 
 test:
   override:
-    - RAILS_ENV=test rake db:mongoid:create_indexes
+    - bundle exec RAILS_ENV=test rake db:mongoid:create_indexes
     - bundle exec rspec -f d
   # post:
   #   - bundle exec rubocop -f s --fail-level E app config lib
