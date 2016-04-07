@@ -12,8 +12,7 @@ dependencies:
     - if [[ ! -d ../mongodb-linux-x86_64-ubuntu1204-3.2.4 ]]; then wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1204-3.2.4.tgz -P ../ && tar xvzf ../mongodb-linux-x86_64-ubuntu1204-3.2.4.tgz -C ../; fi
     - sudo stop mongodb
     - sudo cp ../mongodb-linux-x86_64-ubuntu1204-3.2.4/bin/* /usr/bin
-    - sudo start mongodb
-    - sleep 5
+    - sudo start mongodb && sleep 5
     - ./init_mongo.sh
 
 test:
