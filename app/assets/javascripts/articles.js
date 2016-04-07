@@ -3,7 +3,7 @@
  */
 
 // Text area
-$('.article-editor').on('keyup', '.article-text', function (){
+$(document).on('keyup', '.article-editor .article-text', function (){
   // Count number of words
   var words = this.value.match(/\S+/g).length,
       count = this.value.length,
