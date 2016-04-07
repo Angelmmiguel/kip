@@ -6,7 +6,6 @@ RSpec.describe ArticlesController, type: :controller do
       create(:article)
       get :index
       expect(assigns(:articles)).not_to be_nil
-      expect(assigns(:count)).to eq(Article.count)
     end
 
     it 'group articles by category' do
