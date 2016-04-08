@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all.only(:category, :title).asc(:category).asc(:title)
                        .group_by(&:category)
+    @count = Article.count
   end
 
   # Render editor

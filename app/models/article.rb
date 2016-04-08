@@ -25,7 +25,7 @@ class Article
   index({ author: 1 }, unique: false, name: 'author_index')
   index({ title: 'text', category: 'text', text: 'text', author: 'text' },
         weights: { category: 10, author: 9, title: 8, text: 5 },
-        name: 'TextIndex')
+        name: 'search_index')
 
   # Validations
   validates :title, :text, :author, :category, presence: true
