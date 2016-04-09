@@ -48,6 +48,8 @@ group :development, :test do
   gem 'rspec', '~> 3.4'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'mongoid-rspec', '3.0.0'
   gem 'quiet_assets'
   gem 'pretty_routes'
