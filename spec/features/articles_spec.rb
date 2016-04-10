@@ -16,7 +16,7 @@ RSpec.describe 'Articles integration', type: :feature do
       @category = 'test2'
       # Go to edit
       visit '/'
-      find('.new-article').click
+      click_link('mode_edit')
       # Fill
       within('.articles-form') do
         fill_in 'title', with: @article[:title]
