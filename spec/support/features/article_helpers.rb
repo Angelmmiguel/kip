@@ -35,5 +35,17 @@ module Features
       expect(page).to have_content(article[:title])
       expect(page).to have_content(article[:category])
     end
+
+    # Check if markdown help is present
+    #
+    def check_markdown_help
+      expect(page).to have_content('Markdown help')
+      # Markdown is opened in another window
+      md_help_window = window_opened_by { click_link('Markdown help') }
+      within_window md_help_window do
+        sleep(1)
+        expect(page.current_path).to eq(help_markdown_index_path)
+      end
+    end
   end
 end
