@@ -17,10 +17,10 @@ module Features
     #
     # @param article [Hash] Field of the article
     #
-    def fill_and_save_article(article)
+    def fill_and_save_article(article, button: 'Save')
       fill_article(article)
       # Save
-      click_link('Save')
+      click_link(button)
       # Expect we are on show
       article.keys.each do |field|
         next if field == :text
