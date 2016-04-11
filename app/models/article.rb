@@ -37,7 +37,7 @@ class Article
   # @param to_model [boolean] Convert results to model
   # @return [Array of Hash, Array of Article] Results sort by ratings
   #
-  def self.search(query, to_model: false, limit: 25, read_time: false)
+  def self.search(query, to_model: false, limit: 15, read_time: false)
     res =
       Article.collection
              .find('$text' => { '$search' => query })

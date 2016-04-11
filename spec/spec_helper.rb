@@ -1,6 +1,15 @@
 # Factory girl
+require 'capybara/rspec'
+require 'capybara/poltergeist'
 require 'factory_girl_rails'
-require 'support/factory_girl'
+require 'support/features/article_helpers'
+
+Capybara.register_driver :poltergeist_kip do |app|
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
+end
+
+Capybara.default_driver = :poltergeist_kip
+Capybara.javascript_driver = :poltergeist_kip
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

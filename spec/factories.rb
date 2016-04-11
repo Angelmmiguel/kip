@@ -1,7 +1,7 @@
 FactoryGirl.define do
   # Articles
   factory :article do
-    title 'This is a title'
+    sequence(:title) { |n| "Title #{n}" }
     author 'Yoshi'
     text '# Hello!'
     category 'My Category'

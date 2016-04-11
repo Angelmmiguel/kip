@@ -64,7 +64,7 @@ $(document).on('input', '.main-search', function(e) {
         });
         // Add a call to action in the bottom
         var txt;
-        if (data.results.length > 15) {
+        if (data.results.length > 12) {
           txt = 'Is not enough for you? Share your knowledge';
         } else {
           txt = 'Do you know more about <b>' + value + '</b>? Share it';
