@@ -76,5 +76,17 @@ RSpec.describe 'Articles', type: :feature do
       expect(page).to have_selector('.article-result', count: 1)
       expect(page).to have_content(@other_title)
     end
+
+    it 'must show a call to action when scroll down' do
+      visit '/'
+      # Fill input
+      fill_in 'search', with: 'Title'
+      sleep(1)
+      find_link 'Start an article about Title'
+      # Fill input
+      fill_in 'search', with: @other_title
+      sleep(1)
+      find_link "Start an article about #{@other_title}"
+    end
   end
 end
