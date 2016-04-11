@@ -51,4 +51,30 @@ RSpec.describe 'Articles', type: :feature do
       fill_and_save_article({ title: @new_title }, button: 'Update')
     end
   end
+
+  context 'Search' do
+    before(:each) do
+      number = 25
+      FactoryGirl.create_list(:article, number)
+      @other_title = 'Supernintendo'
+      create(:article, title: @other_title)
+    end
+
+    it 'show only 15 more relevant articles' do
+      visit '/'
+      # Fill input
+      fill_in 'search', with: 'Title'
+      sleep(1)
+      expect(page).to have_selector('.article-result', count: 15)
+    end
+
+    it 'show only the article' do
+      visit '/'
+      # Fill input
+      fill_in 'search', with: @other_title
+      sleep(1)
+      expect(page).to have_selector('.article-result', count: 1)
+      expect(page).to have_content(@other_title)
+    end
+  end
 end
