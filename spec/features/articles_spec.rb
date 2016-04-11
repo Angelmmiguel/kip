@@ -33,6 +33,39 @@ RSpec.describe 'Articles', type: :feature do
     end
   end
 
+  context 'Validation' do
+    before(:each) do
+      @article = create(:article)
+    end
+
+    it 'should validate all fields when create' do
+      visit new_article_path
+      click_link('Save')
+      sleep(1)
+      # User musn't be redirected
+      expect(page.current_path).to eq(new_article_path)
+      %w(title author category text).each do |field|
+        expect(page).to have_selector(".article-#{field}.error")
+      end
+    end
+
+    it 'should validate all fields when edit' do
+      visit edit_article_path(@article)
+      # Clear elements
+      %w(title category text).each do |field|
+        fill_in field, with: ''
+      end
+      # Try to update
+      click_link('Update')
+      sleep(1)
+      # User musn't be redirected
+      expect(page.current_path).to eq(edit_article_path(@article))
+      %w(title category text).each do |field|
+        expect(page).to have_selector(".article-#{field}.error")
+      end
+    end
+  end
+
   context 'Edition' do
     before(:each) do
       @article = create(:article)
