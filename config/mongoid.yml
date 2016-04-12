@@ -3,7 +3,7 @@ production:
   clients:
     default:
       <% if ENV['MONGODB_URI'] %>
-      uri: ENV['MONGODB_URI']
+      uri: <%= ENV['MONGODB_URI'] %>
       <% else %>
       database: kip
       hosts:
