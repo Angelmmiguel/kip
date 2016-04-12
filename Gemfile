@@ -56,7 +56,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'coveralls', require: false
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :development do

@@ -3,10 +3,10 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl_rails'
 require 'support/features/article_helpers'
-require 'coveralls'
+require 'codeclimate-test-reporter'
 
-# Coveralls
-Coveralls.wear!('rails')
+# Coverage tests
+CodeClimate::TestReporter.start
 
 Capybara.register_driver :poltergeist_kip do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false)

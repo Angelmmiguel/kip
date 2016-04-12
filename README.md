@@ -3,7 +3,8 @@
 </p>
 
 [![CircleCI](https://img.shields.io/circleci/project/Angelmmiguel/kip/master.svg?style=flat-square)](https://circleci.com/gh/Angelmmiguel/kip/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/Angelmmiguel/kip/badge.svg?branch=master)](https://coveralls.io/github/Angelmmiguel/kip?branch=master)
+[![Code Climate](https://codeclimate.com/github/Angelmmiguel/kip/badges/gpa.svg)](https://codeclimate.com/github/Angelmmiguel/kip)
+[![Test Coverage](https://codeclimate.com/github/Angelmmiguel/kip/badges/coverage.svg)](https://codeclimate.com/github/Angelmmiguel/kip/coverage)
 
 # Kip
 
