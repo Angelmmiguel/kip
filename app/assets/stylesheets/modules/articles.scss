@@ -3,6 +3,7 @@
 .article-list {
   @include display-flex-center();
   position: relative;
+  margin: 0 auto 100px;
 
   .category {
     width: 300px;
@@ -24,7 +25,7 @@
 
 .article-search {
   display: none;
-  margin-top: 50px;
+  margin: 50px auto 120px;
 
   .article-search-empty,
   .article-result {
@@ -45,8 +46,7 @@
     }
 
     &.article-search-more {
-      margin-top: 80px;
-      border-top: 1px solid lighten($secondary, 45%);
+      margin: 80px auto 150px;
 
       p {
         margin-top: 20px;

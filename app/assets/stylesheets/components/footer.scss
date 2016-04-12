@@ -1,0 +1,24 @@
+@import "base/globals";
+
+/* Footer of index
+ * --------------- */
+
+footer.index {
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 40px auto 30px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 10px 0;
+  text-align: center;
+  color: lighten($secondary, 20%);
+  border-top: 1px solid lighten($secondary, 50%);
+
+  @media screen and (max-width: $break-mobile) {
+    margin-top: 65px;
+    max-width: 75%;
+  }
+}
