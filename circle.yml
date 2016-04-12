@@ -13,7 +13,7 @@ dependencies:
     - sudo stop mongodb
     - sudo cp ../mongodb-linux-x86_64-ubuntu1204-3.2.4/bin/* /usr/bin
     - sudo start mongodb && sleep 5
-    - ./init_mongo.sh
+    - ./scripts/init_mongo.sh
 
 test:
   override:

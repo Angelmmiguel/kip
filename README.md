@@ -47,6 +47,14 @@ Go to `http://localhost:3000` and start to write your articles :).
 
 If you stop the services with `docker-compose stop` you can start them after with `docker-compose start` and restore all articles.
 
+### Update web
+
+To update the web go to the `kip` folder and run the following command:
+
+```bash
+./scripts/docker_update.sh
+```
+
 # Screenshots
 
 ## Welcome
