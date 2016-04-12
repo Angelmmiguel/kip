@@ -12,7 +12,7 @@ services:
     command: bash -c "bundle exec rake db:setup && bundle exec puma -C config/puma.rb"
     environment:
       RAILS_ENV: production
-      RAILS_PORT: 3000
+      PORT: 3000
       MONGODB_IP: mongo
       RAILS_SERVE_STATIC_FILES: 'yes'
     env_file:
