@@ -2,10 +2,10 @@
 production:
   clients:
     default:
-      database: kip
       <% if ENV['MONGODB_URI'] %>
       uri: ENV['MONGODB_URI']
       <% else %>
+      database: kip
       hosts:
         - <%= ENV['DB_PORT_27017_TCP_ADDR'] || ENV['MONGODB_IP'] %>:<%= ENV['MONGODB_PORT'] || 27017 %>
       <% end %>
