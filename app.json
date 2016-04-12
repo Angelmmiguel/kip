@@ -1,0 +1,27 @@
+{
+  "name": "Kip",
+  "description": "An OpenSource knowledge base for teams",
+  "keywords": [
+    "productivity",
+    "internal",
+    "open source",
+    "knowledge base"
+  ],
+  "website": "https://github.com/Angelmmiguel/kip",
+  "repository": "https://github.com/Angelmmiguel/kip",
+  "logo": "https://cloud.githubusercontent.com/assets/4056725/14231995/c9b0a714-f998-11e5-8788-2fce29ff0c8b.png",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup && bundle exec puma -C config/puma.rb"
+  },
+  "env": {
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    "mongolab:sandbox"
+  ]
+}
