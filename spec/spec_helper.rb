@@ -3,6 +3,10 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl_rails'
 require 'support/features/article_helpers'
+require 'coveralls'
+
+# Coveralls
+Coveralls.wear!
 
 Capybara.register_driver :poltergeist_kip do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false)
