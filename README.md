@@ -25,7 +25,7 @@ Kip is an open source Knowledge base for **teams**, because **knowledge is Power
 
 You can install Kip in different ways. The easiest way is with `docker-compose`, but you can install it in a custom server. Kip only depends on [mongodb](https://www.mongodb.org/) and [ruby](https://www.ruby-lang.org/es/).
 
-To get more information, see [Installation guide](https://github.com/Angelmmiguel/kip/wiki/Installation)
+To get more information, see [Installation guide](https://github.com/Angelmmiguel/kip/wiki/Installation).
 
 # Screenshots
 
