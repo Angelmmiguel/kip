@@ -29,7 +29,7 @@ To get more information, see [Installation guide](https://github.com/Angelmmigue
 
 ## Demo
 
-Do you want to see a demo of Kip and you have an account in [Heroku]()? Click the following button :)
+Do you want to see a demo of Kip and you have an account in [Heroku](https://heroku.com)? Click the following button :)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
