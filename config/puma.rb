@@ -1,3 +1,7 @@
 #!/usr/bin/env puma
 
-bind "tcp://0.0.0.0:#{ENV['RAILS_PORT'] || 3000}"
+# Bind port
+bind "tcp://0.0.0.0:#{ENV['PORT'] || 3000}"
+
+# Correct environment
+environment ENV['RACK_ENV'] || 'development'
