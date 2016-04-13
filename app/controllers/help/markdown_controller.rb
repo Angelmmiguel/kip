@@ -2,7 +2,7 @@
 # Help of markdown.
 #
 class Help::MarkdownController < ApplicationController
-
+  # Cache always index
   caches_action :index
 
   # Markdown cheatsheet
