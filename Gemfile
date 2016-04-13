@@ -53,6 +53,11 @@ group :development, :test do
   gem 'mongoid-rspec', '3.0.0'
   gem 'quiet_assets'
   gem 'pretty_routes'
+  # Code linters
+  gem 'brakeman', require: false
+  gem 'flay', require: false
+  gem 'flog', require: false
+  gem 'rubocop', require: false
 end
 
 group :test do
