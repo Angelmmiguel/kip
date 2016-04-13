@@ -20,7 +20,7 @@ test:
     - bundle exec rake db:mongoid:create_indexes RAILS_ENV=test
     - bundle exec rspec -f d
   post:
-    - bundle exec rubocop app lib config -f s --fail-level W
+    - bundle exec rubocop app lib config -f s --fail-level C
     - bundle exec flay app lib
     - find {app,lib,config} -name \*.rb | xargs bundle exec flog
     - bundle exec brakeman -q

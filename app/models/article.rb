@@ -35,17 +35,14 @@ class Article
   #
   # @param query [String] String to search
   # @param to_model [boolean] Convert results to model
+  # @param limit [Fixnum] Number of results to return
+  # @param read_time [boolean] Include read_time when return Array of Hash
   # @return [Array of Hash, Array of Article] Results sort by ratings
   #
   def self.search(query, to_model: false, limit: 15, read_time: false)
-    res =
-      Article.collection
-             .find('$text' => { '$search' => query })
-             .projection(id: 1, title: 1, category: 1, author: 1,
-                         number_of_words: 1, score: { '$meta' => 'textScore' })
-             .sort(score: { '$meta' => 'textScore' })
-             .limit(limit)
-             .entries
+    # Perform query
+    res = search_query(query, limit)
+    # Format results
     if !to_model && read_time
       # Return with read_time
       res.map! do |r|
@@ -56,6 +53,24 @@ class Article
       to_model ? res.map! { |r| new(r) } : res
     end
   end
+
+  # Execute the query to MongoDB
+  #
+  # @param query [String] String to search
+  # @param limit [Fixnum] Number of results to return
+  # @return [Array] Array of results
+  #
+  def self.search_query(query, limit)
+    Article.collection
+           .find('$text' => { '$search' => query })
+           .projection(id: 1, title: 1, category: 1, author: 1,
+                       number_of_words: 1, score: { '$meta' => 'textScore' })
+           .sort(score: { '$meta' => 'textScore' })
+           .limit(limit)
+           .entries
+  end
+  # Make last method private
+  private_class_method :search_query
 
   # Get and approximation of read time per article
   #
