@@ -21,6 +21,18 @@ module ArticlesHelper
     article.errors.messages.keys.include?(field) ? 'error' : ''
   end
 
+  # Sanitize markdown text
+  #
+  # @param text [Safe String] HTML from markdown article
+  # @return [Safe String] HTML without any scripts or dangerous tags
+  #
+  def sanitize_markdown(text)
+    scrubber = Rails::Html::TargetScrubber.new
+    scrubber.tags = %w(script style iframe)
+    # Sanitize
+    sanitize text, scrubber: scrubber
+  end
+
   # Return save button of Article form based on the article status
   # (new or saved)
   #

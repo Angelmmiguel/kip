@@ -16,7 +16,7 @@
       </p>
     </header>
     <article class="article-text markdown">
-      <%= @text %>
+      <%= sanitize_markdown @text %>
     </article>
   </section>
 <% end %>
