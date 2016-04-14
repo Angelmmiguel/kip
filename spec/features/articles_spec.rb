@@ -66,6 +66,26 @@ RSpec.describe 'Articles', type: :feature do
     end
   end
 
+  context 'Visualization' do
+    before(:each) do
+      @article = create(:article, :unpermitted_tags)
+    end
+
+    it 'must escape unpermitted tags' do
+      visit article_path(@article)
+      %w(title author category).each do |field|
+        script = @article.send(field)
+                         .scan(%r{(\w+)<script>.*<\/script>}).flatten.first
+        # Expect the text include the content of unpermitted tags
+        expect(page).to have_content(script)
+      end
+      # check text
+      script = @article.text.scan(%r{<script>(.*)<\/script>}).flatten.first
+      # Expect the text include the content of unpermitted tags
+      expect(page).to have_content(script)
+    end
+  end
+
   context 'Edition' do
     before(:each) do
       @article = create(:article)
