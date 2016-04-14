@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe ArticlesHelper, type: :helper do
   include MaterialIcons::MaterialIconHelper
 
-  it 'return correct HTTP method' do
+  it 'returns correct HTTP method' do
     expect(save_method(create(:article))).to eq(:patch)
     expect(save_method(build(:article))).to eq(:post)
   end
 
-  it 'check error in a field' do
+  it 'checks error in a field' do
     article = Article.create
     %w(title text category author).each do |field|
       expect(error?(article, field)).to eq('error')
@@ -20,7 +20,19 @@ RSpec.describe ArticlesHelper, type: :helper do
     end
   end
 
-  it 'sanitize markdown' do
+  it 'returns text editor fields' do
+    article = create(:article)
+    placeholder = 'my placeholder'
+    %w(title text category author).each do |field|
+      output = text_editor_field(article, field, 'my placeholder')
+      expect(output).to include('<input')
+      expect(output).to include('/>')
+      expect(output).to include(placeholder)
+      expect(output).to include("name=\"#{field}\"")
+    end
+  end
+
+  it 'sanitizes markdown' do
     unpermitted_text =
       '<script>alert(a)</script><iframe src="http://google.com"></iframe>' \
       '<style>body { color: white }'

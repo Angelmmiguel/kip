@@ -21,6 +21,19 @@ module ArticlesHelper
     article.errors.messages.keys.include?(field.to_sym) ? 'error' : nil
   end
 
+  # Create a text field for text editor
+  #
+  # @param article [Article] Article to get the input
+  # @param field [Symbol] field to get the input
+  # @param placeholder [String] placeholder to display
+  # @return [HTML safe string] HTML code of the input
+  #
+  def text_editor_field(article, field, placeholder)
+    text_field_tag field, article.send(field),
+                   class: "article-#{field} #{error?(article, field)}",
+                   placeholder: placeholder, data: { validate: 'presence' }
+  end
+
   # Sanitize markdown text
   #
   # @param text [Safe String] HTML from markdown article

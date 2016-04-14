@@ -1,17 +1,14 @@
 <%= form_tag @article, class: 'articles-form', method: save_method(@article) do %>
   <section class="article article-editor">
     <header>
-      <%= text_field_tag :title, @article.title, class: "article-title #{error?(@article, :title)}",
-            placeholder: 'Insert the title', data: { validate: 'presence' } %>
+      <%= text_editor_field @article, :title, 'Insert the title' %>
       <p class="article-credits">
         <% if @article.persisted? %>
           By <%= @article.author %>
         <% else %>
-          By <%= text_field_tag :author, @article.author, class: "article-author #{error?(@article, :author)}",
-                placeholder: 'your name', data: { validate: 'presence' } %>
+          By <%= text_editor_field @article, :author, 'your name' %>
         <% end %>
-        in <%= text_field_tag :category, @article.category, class: "article-category #{error?(@article, :category)}",
-              placeholder: 'a category', data: { validate: 'presence' } %>
+        in <%= text_editor_field @article, :category, 'a category' %>
       </p>
     </header>
     <article>
