@@ -28,6 +28,20 @@ $(document).ready(ready);
 $(document).on('page:load', ready);
 $(document).on('page:restore', ready);
 
+/* Block to display in search
+ *
+ * @param txt [String] Text to show in the paragraph
+ * @param value [String] Value of the query
+ * @return [String] HTML code of the message
+ */
+function searchMessage(txt, value){
+  return '<div class="article-search-empty">' +
+           '<p>' + txt + '</p>' +
+           '<a class="btn btn-light" href="/articles/new?title=' + encodeURIComponent(value) + '">' +
+           'Start an article about <b>' + value + '</b> <i class="material-icons small">mode_edit</i></a>' +
+         '</div>';
+}
+
 // Search functionality for index view
 $(document).on('input', '.main-search', function(e) {
   var value = this.value,
@@ -48,12 +62,8 @@ $(document).on('input', '.main-search', function(e) {
       }
     }).done(function(data) {
       var html = '';
-      if (data.results.length === 0){
-        html = '<div class="article-search-empty">' +
-                 '<p>No match for the word <b>' + value + '</b></p>' +
-                 '<a class="btn btn-light" href="/articles/new?title=' + encodeURIComponent(value) + '">' +
-                 'Start an article about <b>' + value + '</b> <i class="material-icons small">mode_edit</i></a>' +
-               '</div>';
+      if (data.results.length === 0) {
+        html = searchMessage('No match for the word <b>' + value + '</b>', value);
       } else {
         $.each(data.results, function(index, result){
           html += '<div class="article-result">' +
@@ -69,12 +79,8 @@ $(document).on('input', '.main-search', function(e) {
         } else {
           txt = 'Do you know more about <b>' + value + '</b>? Share it';
         }
-
-        html += '<div class="article-search-empty article-search-more">' +
-                  '<p>'+ txt +'</p>' +
-                  '<a class="btn btn-light" href="/articles/new?title=' + encodeURIComponent(value) + '">' +
-                  'Start an article about <b>' + value + '</b> <i class="material-icons small">mode_edit</i></a>' +
-                '</div>';
+        // Include a message for call to action
+        html += searchMessage(txt, value);
       }
       $articleSearch.html(html);
       $articleSearch.show();

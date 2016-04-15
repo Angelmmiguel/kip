@@ -13,12 +13,37 @@ module ArticlesHelper
   # Add an error to the input when it's needed
   #
   # @param article [Article] Model to check errors
-  # @param field [field] Field to check the error
+  # @param field [String, Symbol] Field to check the error
   # @return [String] Error or empty string
   #
   def error?(article, field)
     return if article.errors.empty?
-    article.errors.messages.keys.include?(field) ? 'error' : ''
+    article.errors.messages.keys.include?(field.to_sym) ? 'error' : nil
+  end
+
+  # Create a text field for text editor
+  #
+  # @param article [Article] Article to get the input
+  # @param field [Symbol] field to get the input
+  # @param placeholder [String] placeholder to display
+  # @return [HTML safe string] HTML code of the input
+  #
+  def text_editor_field(article, field, placeholder)
+    text_field_tag field, article.send(field),
+                   class: "article-#{field} #{error?(article, field)}",
+                   placeholder: placeholder, data: { validate: 'presence' }
+  end
+
+  # Sanitize markdown text
+  #
+  # @param text [Safe String] HTML from markdown article
+  # @return [Safe String] HTML without any scripts or dangerous tags
+  #
+  def sanitize_markdown(text)
+    scrubber = Rails::Html::TargetScrubber.new
+    scrubber.tags = %w(script style iframe)
+    # Sanitize
+    sanitize text, scrubber: scrubber
   end
 
   # Return save button of Article form based on the article status

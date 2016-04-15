@@ -23,6 +23,9 @@ RSpec.describe Article, type: :model do
       expect(Article.search('Hello!', limit: 100).size)
         .to eq(number)
       expect(Article.search(other.text).size).to eq(1)
+      # Raise an exceptio on private method
+      expect { Article.search_query(other.text, 15) }
+        .to raise_error(NoMethodError, /private/)
     end
   end
 end
