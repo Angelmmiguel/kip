@@ -22,5 +22,5 @@ test:
   post:
     - bundle exec rubocop app lib config -f s --fail-level C
     - bundle exec flay app lib
-    - find {app,lib,config} -name \*.rb | xargs bundle exec flog
+    - find {app,lib,config} -name \*.rb | xargs bundle exec flog -m
     - bundle exec brakeman -q
