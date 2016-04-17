@@ -21,8 +21,8 @@ bind "unix://#{tmp_dir}/sockets/puma.sock"
 
 # Logging
 stdout_redirect(
-  "#{log_dir}/log/puma.stdout.log",
-  "#{log_dir}/log/puma.stderr.log",
+  "#{log_dir}/puma.stdout.log",
+  "#{log_dir}/puma.stderr.log",
   true
 )
 
