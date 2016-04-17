@@ -7,7 +7,7 @@ production:
       <% else %>
       database: kip
       hosts:
-        - <%= ENV['DB_PORT_27017_TCP_ADDR'] || ENV['MONGODB_IP'] %>:<%= ENV['MONGODB_PORT'] || 27017 %>
+        - <%= ENV['DB_PORT_27017_TCP_ADDR'] || ENV['MONGODB_IP'] || 'localhost' %>:<%= ENV['MONGODB_PORT'] || 27017 %>
       <% end %>
 
 development:
