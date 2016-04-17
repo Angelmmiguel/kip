@@ -9,7 +9,7 @@ services:
     command: --smallfiles
   web:
     build: .
-    command: bash -c "bundle exec rake db:setup && bundle exec puma -C config/puma.rb"
+    command: bash -c "bundle exec rake db:setup && bundle exec puma -C config/puma-docker.rb"
     environment:
       RAILS_ENV: production
       PORT: 3000
