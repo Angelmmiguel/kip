@@ -7,7 +7,7 @@ threads 1, 6
 bind "tcp://0.0.0.0:#{ENV['PORT'] || 3000}"
 
 # Correct environment
-environment ENV['RACK_ENV'] || 'development'
+environment ENV['RACK_ENV'] || 'production'
 
 # Daemonize
 daemonize true
