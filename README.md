@@ -5,6 +5,8 @@
 [![CircleCI](https://img.shields.io/circleci/project/Angelmmiguel/kip/master.svg?style=flat-square)](https://circleci.com/gh/Angelmmiguel/kip/tree/master)
 [![Code Climate](https://codeclimate.com/github/Angelmmiguel/kip/badges/gpa.svg)](https://codeclimate.com/github/Angelmmiguel/kip)
 [![Test Coverage](https://codeclimate.com/github/Angelmmiguel/kip/badges/coverage.svg)](https://codeclimate.com/github/Angelmmiguel/kip/coverage)
+[![Security](https://hakiri.io/github/Angelmmiguel/kip/master.svg)](https://hakiri.io/github/Angelmmiguel/kip/master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/Angelmmiguel/kip.svg)](https://gemnasium.com/github.com/Angelmmiguel/kip)
 
 # Kip
 
