@@ -10,10 +10,10 @@
 <% cache (@article) do %>
   <section class="article article-show">
     <header>
-      <h1 class="article-title"><%= strip_tags @article.title %></h1>
+      <h1 class="article-title"><%= strip_tags(@article.title).html_safe %></h1>
       <p class="article-credits">
-        By <span><%= strip_tags @article.author %></span> in
-        <span><%= strip_tags @article.category %></span>
+        By <span><%= strip_tags(@article.author).html_safe %></span> in
+        <span><%= strip_tags(@article.category).html_safe %></span>
       </p>
     </header>
     <article class="article-text markdown">
