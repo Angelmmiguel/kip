@@ -1,0 +1,29 @@
+{
+  "name": "kip",
+  "version": "1.0.0",
+  "description": "Kip landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angelmmiguel/kip.git"
+  },
+  "keywords": [
+    "Kip",
+    "Knowledge",
+    "Base",
+    "OpenSource"
+  ],
+  "author": "Angel M <angel@laux.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Angelmmiguel/kip/issues"
+  },
+  "homepage": "https://github.com/Angelmmiguel/kip#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.0"
+  }
+}
